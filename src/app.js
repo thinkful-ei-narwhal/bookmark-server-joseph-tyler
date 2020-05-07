@@ -1,5 +1,4 @@
-require("dotenv");
-
+require("dotenv").config();
 const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
@@ -32,6 +31,7 @@ app.use(function requireAuth(req, res, next) {
 
   next();
 });
+
 app.use("/bookmarks", bmRouter);
 
 app.use(function errorMiddleWare(err, req, res, next) {
